@@ -1,0 +1,18 @@
+# Render.com deployment config (free tier).
+# Push this to your repo, then on render.com: New > Blueprint > pick your repo.
+services:
+  - type: web
+    name: clinical-trials-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: KMP_DUPLICATE_LIB_OK
+        value: "TRUE"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: HF_HUB_OFFLINE
+        value: "1"
+      - key: TRANSFORMERS_OFFLINE
+        value: "1"

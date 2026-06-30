@@ -1,0 +1,16 @@
+venv/
+notebooks/
+dashboard/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.git/
+.gitignore
+tests/
+*.md
+.streamlit/
+# Keep model + index artifacts (the API needs them):
+# src/model.joblib, src/trials.faiss, src/trials_meta.parquet are NOT ignored.
+# But the big raw CSV in data/ is only needed if you retrain; keep it out:
+data/*.csv
